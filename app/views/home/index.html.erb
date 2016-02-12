@@ -1,0 +1,13 @@
+<h1>Welcome to my App</h1>
+<%= form_tag "/search", method: "get" do %>
+	<%= label_tag :query, "Search Twitter: " %>
+	<%= text_field_tag :query %>
+	<%= submit_tag %>
+<% end %>
+
+<% if @results %>
+	<% @results.each do |result| %>
+		<p><%= result.text %></p>
+
+	<% end %>
+<% end %>
